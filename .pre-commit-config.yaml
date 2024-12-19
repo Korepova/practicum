@@ -1,0 +1,11 @@
+repos:
+  # Check with flake8
+  - repo: local
+    hooks:
+      - id: flake8
+        name: flake8
+        description: wemake-python-styleguide enforcement
+        entry: flake8
+        args: ["--max-line-length=79"]
+        language: python
+        types: [python]
