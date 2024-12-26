@@ -1,0 +1,23 @@
+# Code formatting:
+autopep8 --in-place --aggressive --aggressive test.py
+
+# Подключиться к серверу postgres
+psql -h 127.0.0.1 -U app -d movies_database
+
+# Виртуальное окружение:
+python3 -m venv env
+source env/bin/activate
+
+pip install -r requirements.txt
+python manage.py runserver
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py startapp movies
+
+# config/.env
+DB_NAME=movies_database
+DB_USER=app
+DB_PASSWORD=123qwe
+SECRET_KEY='django-insecure-r5wlnc24t5q5#3$^&!34opym-(l*agsg^kq&#xgeed%b8imcx#'
+DEBUG=
+
